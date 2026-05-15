@@ -52,7 +52,7 @@ function App() {
       />
       
       <footer style={{ marginTop: '5rem', paddingBottom: '2rem', textAlign: 'center', color: '#888', fontSize: '0.8rem' }}>
-        &copy; {new Date().getFullYear()} Hyunseo Son. Built with React.
+        &copy; {new Date().getFullYear()} Justin Son. Built with React.
       </footer>
     </div>
   );

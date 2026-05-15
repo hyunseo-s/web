@@ -8,6 +8,16 @@ export interface Photo {
 }
 
 export const photos: Photo[] = [
+  // Example of using a local image (uncomment once you add your files):
+  /*
+  {
+    id: 'local-1',
+    url: '/images/photos/my-photo.jpg',
+    thumbnail: '/images/thumbnails/my-photo.jpg',
+    title: 'My Local Photo',
+    category: 'Nature',
+  },
+  */
   {
     id: '1',
     url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
