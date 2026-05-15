@@ -7,10 +7,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onAboutClick }) => {
   return (
     <header>
-      <h1>Hyunseo Son</h1>
+      <h1>Justin's Collection</h1>
       <nav>
         <ul>
-          <li><button className="active">Work</button></li>
+          <li><button className="active">Collection</button></li>
           <li><button onClick={onAboutClick}>About</button></li>
         </ul>
       </nav>
