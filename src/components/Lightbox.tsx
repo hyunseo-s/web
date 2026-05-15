@@ -70,10 +70,10 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
         <img src={images[currentIndex]} alt={`${photo.title} ${currentIndex + 1}`} />
         
         <div className="lightbox-info">
-          <h3>{photo.title}</h3>
           {isCarousel && (
             <p className="carousel-counter">{currentIndex + 1} / {images.length}</p>
           )}
+          <h3>{photo.title}</h3>
           {photo.description && <p>{photo.description}</p>}
         </div>
       </div>
