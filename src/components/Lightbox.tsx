@@ -17,6 +17,18 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
   const images = photo ? (Array.isArray(photo.url) ? photo.url : [photo.url]) : [];
   const isCarousel = images.length > 1;
 
+  const nextImage = () => {
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
@@ -27,15 +39,7 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, isCarousel, currentIndex]);
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [onClose, isCarousel, currentIndex, images.length]);
 
   if (!photo) return null;
 
@@ -45,8 +49,20 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
       
       {isCarousel && (
         <>
-          <button className="nav-btn prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>&#10094;</button>
-          <button className="nav-btn next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>&#10095;</button>
+          <button 
+            className={`nav-btn prev ${currentIndex === 0 ? 'disabled' : ''}`} 
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            disabled={currentIndex === 0}
+          >
+            &#10094;
+          </button>
+          <button 
+            className={`nav-btn next ${currentIndex === images.length - 1 ? 'disabled' : ''}`} 
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            disabled={currentIndex === images.length - 1}
+          >
+            &#10095;
+          </button>
         </>
       )}
 
