@@ -15,13 +15,25 @@ function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const categories = useMemo(() => {
-    const cats = new Set(photos.map(p => p.category));
+    const cats = new Set<string>();
+    photos.forEach(p => {
+      if (Array.isArray(p.category)) {
+        p.category.forEach(c => cats.add(c));
+      } else {
+        cats.add(p.category);
+      }
+    });
     return Array.from(cats);
   }, []);
 
   const filteredPhotos = useMemo(() => {
     if (activeCategory === 'All') return photos;
-    return photos.filter(p => p.category === activeCategory);
+    return photos.filter(p => {
+      if (Array.isArray(p.category)) {
+        return p.category.includes(activeCategory);
+      }
+      return p.category === activeCategory;
+    });
   }, [activeCategory]);
 
   return (
