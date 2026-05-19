@@ -1,106 +1,115 @@
 export interface Photo {
   id: string;
+  /**
+   * Can be a single image path string or an array of strings for a carousel.
+   * Example: "/images/photos/img.jpg" OR ["/images/photos/img1.jpg", "/images/photos/img2.jpg"]
+   */
   url: string | string[];
+  /** Path to the image used in the grid view. */
   thumbnail: string;
   title: string;
+  /** 
+   * A single category string or an array of strings for multiple categories.
+   * Example: "Nature" OR ["Nature", "Landscape"]
+   */
   category: string | string[];
   description?: string;
 }
 
 export const photos: Photo[] = [
   {
-    "id": "demo-carousel",
+    "id": "featured-carousel-1",
     "url": [
-      "/images/photos/54A64A44-364A-42BD-999B-AE76A78C6E10.jpg",
-      "/images/photos/D6D0213F-DA2E-476B-B243-144ADE10EF41.jpg",
-      "/images/photos/IMG_1622.jpg"
+      "/images/photos/IMG_1622.jpg",
+      "/images/photos/IMG_2449.jpg",
+      "/images/photos/IMG_2572.jpg"
     ],
-    "thumbnail": "/images/photos/54A64A44-364A-42BD-999B-AE76A78C6E10.jpg",
-    "title": "Demo Multi-Image Post",
-    "category": ["Theo", "Nim"],
-    "description": "This is a demo post with multiple images and categories."
+    "thumbnail": "/images/photos/IMG_1622.jpg",
+    "title": "Summer Collection",
+    "category": ["Featured", "Nature", "Summer"],
+    "description": "A collection of shots from the peak of summer, showcasing both nature and featured moments."
   },
   {
-    "id": "demo-carousel-2",
+    "id": "featured-carousel-2",
     "url": [
-      "/images/photos/IMG_2572.jpg",
       "/images/photos/IMG_2810.jpg",
-      "/images/photos/IMG_2859.jpg"
+      "/images/photos/IMG_2859.jpg",
+      "/images/photos/IMG_2874.jpg"
     ],
-    "thumbnail": "/images/photos/IMG_2572.jpg",
-    "title": "Another Carousel Demo",
-    "category": ["Featured", "Travel"],
-    "description": "A second demo showing off the smooth carousel transition in the lightbox."
+    "thumbnail": "/images/photos/IMG_2810.jpg",
+    "title": "Urban Series",
+    "category": ["Featured", "Urban", "Series"],
+    "description": "A multi-part series exploring urban textures and street life."
   },
   {
     "id": "1",
     "url": "/images/photos/54A64A44-364A-42BD-999B-AE76A78C6E10.jpg",
     "thumbnail": "/images/photos/54A64A44-364A-42BD-999B-AE76A78C6E10.jpg",
-    "title": "Side Eye",
-    "category": "Theo"
+    "title": "Photo 1",
+    "category": "Misc"
   },
   {
     "id": "2",
     "url": "/images/photos/D6D0213F-DA2E-476B-B243-144ADE10EF41.jpg",
     "thumbnail": "/images/photos/D6D0213F-DA2E-476B-B243-144ADE10EF41.jpg",
-    "title": "Death Stare",
-    "category": "Theo"
+    "title": "Photo 2",
+    "category": "Misc"
   },
   {
     "id": "3",
     "url": "/images/photos/IMG_1622.jpg",
     "thumbnail": "/images/photos/IMG_1622.jpg",
-    "title": "Happy Boy",
-    "category": "Seokgu"
+    "title": "Photo 3",
+    "category": "Misc"
   },
   {
     "id": "4",
     "url": "/images/photos/IMG_2449.jpg",
     "thumbnail": "/images/photos/IMG_2449.jpg",
-    "title": "Stupid Cat & Flowers",
-    "category": "Nim"
+    "title": "Photo 4",
+    "category": "Misc"
   },
   {
     "id": "5",
     "url": "/images/photos/IMG_2572.jpg",
     "thumbnail": "/images/photos/IMG_2572.jpg",
-    "title": "Fluffy Cat",
-    "category": "Milo"
+    "title": "Photo 5",
+    "category": "Misc"
   },
   {
     "id": "6",
     "url": "/images/photos/IMG_2810.jpg",
     "thumbnail": "/images/photos/IMG_2810.jpg",
-    "title": "Cat in Lego",
-    "category": "Nim"
+    "title": "Photo 6",
+    "category": "Misc"
   },
   {
     "id": "7",
     "url": "/images/photos/IMG_2859.jpg",
     "thumbnail": "/images/photos/IMG_2859.jpg",
-    "title": "On the ledge",
-    "category": "Milo"
+    "title": "Photo 7",
+    "category": "Misc"
   },
   {
     "id": "8",
     "url": "/images/photos/IMG_2874.jpg",
     "thumbnail": "/images/photos/IMG_2874.jpg",
-    "title": "Lonely Quokka",
-    "category": "Nature"
+    "title": "Photo 8",
+    "category": "Misc"
   },
   {
     "id": "9",
     "url": "/images/photos/IMG_2937.jpg",
     "thumbnail": "/images/photos/IMG_2937.jpg",
-    "title": "KatsEye Giraffe",
-    "category": "Nature"
+    "title": "Photo 9",
+    "category": "Misc"
   },
   {
     "id": "10",
     "url": "/images/photos/IMG_2959.jpg",
     "thumbnail": "/images/photos/IMG_2959.jpg",
-    "title": "Cold Monkey",
-    "category": "Nature"
+    "title": "Photo 10",
+    "category": "Misc"
   },
   {
     "id": "11",
