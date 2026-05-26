@@ -49,19 +49,23 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
       
       {isCarousel && (
         <>
-          <button 
-            className={`nav-btn prev ${currentIndex === 0 ? 'disabled' : ''}`} 
+          <button
+            className={`nav-btn prev ${currentIndex === 0 ? 'disabled' : ''}`}
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
             disabled={currentIndex === 0}
           >
-            &#10094;
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
-          <button 
-            className={`nav-btn next ${currentIndex === images.length - 1 ? 'disabled' : ''}`} 
+          <button
+            className={`nav-btn next ${currentIndex === images.length - 1 ? 'disabled' : ''}`}
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
             disabled={currentIndex === images.length - 1}
           >
-            &#10095;
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
           </button>
         </>
       )}
