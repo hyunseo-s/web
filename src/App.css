@@ -185,12 +185,28 @@ nav button:hover, nav button.active {
   right: 2rem;
 }
 
-.carousel-counter {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--secondary-color);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.carousel-dot.active {
+  opacity: 1;
+  background: var(--accent-color);
 }
 
 .lightbox-info {

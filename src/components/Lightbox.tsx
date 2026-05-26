@@ -69,10 +69,19 @@ const Lightbox: React.FC<LightboxProps> = ({ photo, onClose }) => {
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
         <img src={images[currentIndex]} alt={`${photo.title} ${currentIndex + 1}`} />
         
+        {isCarousel && (
+          <div className="carousel-dots">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                className={`carousel-dot${i === currentIndex ? ' active' : ''}`}
+                onClick={() => setCurrentIndex(i)}
+              />
+            ))}
+          </div>
+        )}
+
         <div className="lightbox-info">
-          {isCarousel && (
-            <p className="carousel-counter">{currentIndex + 1} / {images.length}</p>
-          )}
           <h3>{photo.title}</h3>
           {photo.description && <p>{photo.description}</p>}
         </div>
